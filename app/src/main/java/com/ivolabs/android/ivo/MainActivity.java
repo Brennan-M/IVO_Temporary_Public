@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.parse.Parse;
 import com.parse.ParseUser;
 
 /**
@@ -24,9 +23,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "QWc3IKpFo2B5WLzfZsKD01tE8MFMh9AAkBGlBChQ", "4sWqGBTufwz72IOcKRfIaOpKJ4Lfo65sRFkTTium");
 
         if (ParseUser.getCurrentUser() != null) {
             startActivity(new Intent(this, HomescreenActivity.class));

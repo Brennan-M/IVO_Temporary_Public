@@ -1,5 +1,6 @@
 package com.ivolabs.android.ivo;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -62,26 +63,31 @@ public class SignupActivityFragment extends Fragment {
             registrationError = true;
             registrationErrorMessage.append("Username cannot be blank!");
         }
-        if (password.length() == 0) {
+        else if (password.length() == 0) {
             registrationError = true;
             registrationErrorMessage.append("Password cannot be blank!");
         }
-        if (username.length() < 5) {
+        else if (username.length() < 5) {
             registrationError = true;
             registrationErrorMessage.append("Username must be longer than 5 characters.");
         }
-        if (password.length() < 5) {
+       else  if (password.length() < 5) {
             registrationError = true;
             registrationErrorMessage.append("Password must be longer than 5 characters.");
         }
-        if (!password.equals(passwordDuplicate)) {
+        else if (!password.equals(passwordDuplicate)) {
             registrationError = true;
             registrationErrorMessage.append("Passwords do not match!");
         }
 
         if (registrationError) {
             Toast.makeText(SignupActivityFragment.this.getActivity(), registrationErrorMessage.toString(), Toast.LENGTH_LONG).show();
+            return;
         }
+
+        final ProgressDialog dialog = new ProgressDialog(SignupActivityFragment.this.getActivity());
+        dialog.setMessage("Creating new user...");
+        dialog.show();
 
         ParseUser newUser = new ParseUser();
         newUser.setUsername(username);
