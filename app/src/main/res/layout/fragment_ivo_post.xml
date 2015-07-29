@@ -7,6 +7,28 @@
     tools:context="com.ivolabs.android.ivo.IvoPostActivityFragment">
 
     <TextView android:text="Post to IVO!" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+
+    <EditText
+        android:layout_width="274dp"
+        android:layout_height="35dp"
+        android:id="@+id/postTextEntry"
+        android:hint="@string/ivoPostHint"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="111dp" />
+
+    <Button
+        android:id="@+id/submit_ivopost_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="119dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
