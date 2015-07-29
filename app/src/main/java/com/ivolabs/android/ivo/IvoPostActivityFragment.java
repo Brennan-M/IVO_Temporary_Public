@@ -10,7 +10,6 @@ import android.widget.EditText;
 
 import com.parse.ParseACL;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
@@ -47,17 +46,16 @@ public class IvoPostActivityFragment extends Fragment {
         return view;
     }
 
+
     private void post () {
 
-        ParseObject newIvoPost = new ParseObject("IVO_DB");
-
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        newIvoPost.put("userName", currentUser.getUsername());
-
-        //post.setLocation(geoPoint);
-
+        IVO_DB_POST newIvoPost = new IVO_DB_POST();
+        newIvoPost.setUser(ParseUser.getCurrentUser());
         String text = ivoPostText.getText().toString().trim();
-        newIvoPost.put("textEntry", text);
+        newIvoPost.setTextEntry(text);
+
+        //ParseGeoPoint geoLocation = new ParseGeoPoint(location.getLatitude(), location.getLongitude());
+        //post.setLocation(geoPoint);
 
         ParseACL acl = new ParseACL();
         acl.setPublicReadAccess(true);
