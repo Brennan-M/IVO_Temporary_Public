@@ -1,5 +1,7 @@
 package com.ivolabs.android.ivo;
 
+import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -58,12 +60,10 @@ public class IvoPostActivityFragment extends Fragment {
         newIvoPost.setTextEntry(text);
         newIvoPost.setUserName(ParseUser.getCurrentUser().getUsername());
 
-        /*
         Intent intent = getActivity().getIntent();
         Location location = intent.getParcelableExtra("location");
         geoCoordinates = new ParseGeoPoint(location.getLatitude(), location.getLongitude());
         newIvoPost.setLocation(geoCoordinates);
-        */
 
         ParseACL acl = new ParseACL();
         acl.setPublicReadAccess(true);

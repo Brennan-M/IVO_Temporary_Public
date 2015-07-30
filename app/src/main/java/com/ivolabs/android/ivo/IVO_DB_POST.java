@@ -37,11 +37,11 @@ public class IVO_DB_POST extends ParseObject {
     }
 
     public ParseGeoPoint getLocation() {
-        return getParseGeoPoint("location");
+        return getParseGeoPoint("geoLocation");
     }
 
     public void setLocation(ParseGeoPoint value) {
-        put("location", value);
+        put("geoLocation", value);
     }
 
     public static ParseQuery<IVO_DB_POST> getQuery() {
