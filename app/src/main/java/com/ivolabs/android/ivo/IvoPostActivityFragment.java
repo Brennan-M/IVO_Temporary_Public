@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 import com.parse.ParseACL;
 import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
@@ -18,6 +19,8 @@ import com.parse.SaveCallback;
  * A placeholder fragment containing a simple view.
  */
 public class IvoPostActivityFragment extends Fragment {
+
+    private ParseGeoPoint geoCoordinates;
 
     public IvoPostActivityFragment() {
     }
@@ -53,9 +56,14 @@ public class IvoPostActivityFragment extends Fragment {
         newIvoPost.setUser(ParseUser.getCurrentUser());
         String text = ivoPostText.getText().toString().trim();
         newIvoPost.setTextEntry(text);
+        newIvoPost.setUserName(ParseUser.getCurrentUser().getUsername());
 
-        //ParseGeoPoint geoLocation = new ParseGeoPoint(location.getLatitude(), location.getLongitude());
-        //post.setLocation(geoPoint);
+        /*
+        Intent intent = getActivity().getIntent();
+        Location location = intent.getParcelableExtra("location");
+        geoCoordinates = new ParseGeoPoint(location.getLatitude(), location.getLongitude());
+        newIvoPost.setLocation(geoCoordinates);
+        */
 
         ParseACL acl = new ParseACL();
         acl.setPublicReadAccess(true);

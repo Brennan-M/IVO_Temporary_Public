@@ -24,6 +24,10 @@ public class IVO_DB_POST extends ParseObject {
         put("textEntry", value);
     }
 
+    public void setUserName(String value) {
+        put("userName", value);
+    }
+
     public ParseUser getUser() {
         return getParseUser("user");
     }
