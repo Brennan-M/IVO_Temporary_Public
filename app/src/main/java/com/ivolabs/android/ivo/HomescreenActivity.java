@@ -12,7 +12,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +25,13 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.parse.ParseACL;
+import com.parse.ParseException;
 import com.parse.ParseGeoPoint;
+import com.parse.ParseQuery;
+import com.parse.ParseQueryAdapter;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 
 public class HomescreenActivity extends ActionBarActivity implements LocationListener,
@@ -37,6 +45,14 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
     private Location lastLocation;
     private Location currentLocation;
+
+    private EditText ivoPostText;
+
+    private static final float DISTANCE_TO_SEARCH_IN_FEET = 250.0f;
+    private static final float METERS_PER_FEET = 0.3048f;
+    private static final int METERS_PER_KILOMETER = 1000;
+
+    private ParseQueryAdapter<IVO_DB_POST> IvoFeedQueryAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,43 +72,61 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                 .addOnConnectionFailedListener(this)
                 .build();
 
-        final TextView welcomeTextView = (TextView) findViewById(R.id.welcomeUser);
+        final Button postButton = (Button) findViewById(R.id.submit_ivopost_button);
+        ivoPostText = (EditText) findViewById(R.id.postTextEntry);
 
-        /* Button to start our IvoPost Activity which needs our location */
-        Button startIvoPostActivityButton = (Button) findViewById(R.id.post_to_Ivo_button);
-        startIvoPostActivityButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Location locationToPass = (currentLocation == null) ? lastLocation : currentLocation;
-                if (locationToPass == null) {
+        postButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Location locationForPost = (currentLocation == null) ? lastLocation : currentLocation;
+                if (locationForPost == null) {
                     Toast.makeText(HomescreenActivity.this,
                             "Please enable location services on your device.", Toast.LENGTH_LONG).show();
                     return;
                 }
-
-                Intent intent = new Intent(HomescreenActivity.this, IvoPostActivity.class);
-                intent.putExtra("location", locationToPass);
-                startActivity(intent);
+                post();
             }
         });
 
-        /* Button to start our IvoFeed Activity which needs our location */
-        Button startIvoFeedActivityButton = (Button) findViewById(R.id.get_Ivo_feed_button);
-        startIvoFeedActivityButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Location locationToPass = (currentLocation == null) ? lastLocation : currentLocation;
-                if (locationToPass == null) {
-                    Toast.makeText(HomescreenActivity.this,
-                            "Your location cannot be accessed at the moment...", Toast.LENGTH_LONG).show();
-                    return;
+
+        ParseQueryAdapter.QueryFactory<IVO_DB_POST> factory =
+                new ParseQueryAdapter.QueryFactory<IVO_DB_POST>() {
+                    public ParseQuery<IVO_DB_POST> create() {
+                        if (currentLocation == null) {
+                            return null;
+                        }
+
+                        ParseQuery<IVO_DB_POST> query = IVO_DB_POST.getQuery();
+                        query.include("user");
+                        query.orderByDescending("createdAt");
+                        query.whereWithinKilometers("geoLocation", geoPointFromLocation(currentLocation), DISTANCE_TO_SEARCH_IN_FEET * METERS_PER_FEET/METERS_PER_KILOMETER);
+                        query.setLimit(20);
+                        return query;
+                    }
+                };
+
+        IvoFeedQueryAdapter = new ParseQueryAdapter<IVO_DB_POST>(this, factory) {
+            @Override
+            public View getItemView(IVO_DB_POST post, View view, ViewGroup parent) {
+                if (view == null) {
+                    view = View.inflate(getContext(), R.layout.ivo_post_item, null);
                 }
-                Intent intent = new Intent(HomescreenActivity.this, IvoFeedActivity.class);
-                intent.putExtra("location", locationToPass);
-                startActivity(intent);
+                TextView contentView = (TextView) view.findViewById(R.id.content_view);
+                TextView usernameView = (TextView) view.findViewById(R.id.username_view);
+                contentView.setText(post.getTextEntry());
+                usernameView.setText(post.getUser().getUsername());
+                return view;
             }
-        });
+        };
 
-        ParseUser currentUser = ParseUser.getCurrentUser();
-        welcomeTextView.setText("Welcome " + currentUser.getUsername());
+        // Disable automatic loading when the adapter is attached to a view.
+        IvoFeedQueryAdapter.setAutoload(false);
+
+        // Disable pagination, we'll manage the query limit ourselves
+        IvoFeedQueryAdapter.setPaginationEnabled(false);
+
+        // Attach the query adapter to the view
+        ListView postsListView = (ListView) findViewById(R.id.ivo_feed_list);
+        postsListView.setAdapter(IvoFeedQueryAdapter);
 
     }
 
@@ -163,6 +197,20 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
         super.onStart();
         locationClient.connect();
+    }
+
+    private void doListQuery() {
+
+        if (currentLocation != null) {
+            IvoFeedQueryAdapter.loadObjects();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        doListQuery();
     }
 
     private void startPeriodicUpdates() {
@@ -238,7 +286,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
             return;
         }
         lastLocation = location;
-        // Update the display
+        doListQuery();
     }
 
     /*
@@ -262,5 +310,30 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
             // Show the error dialog in the DialogFragment
             errorFragment.show(getFragmentManager(), "Ivo");
         }
+    }
+
+    private void post () {
+
+        IVO_DB_POST newIvoPost = new IVO_DB_POST();
+        newIvoPost.setUser(ParseUser.getCurrentUser());
+        String text = ivoPostText.getText().toString().trim();
+        newIvoPost.setTextEntry(text);
+        newIvoPost.setUserName(ParseUser.getCurrentUser().getUsername());
+
+        Intent intent = this.getIntent();
+
+        newIvoPost.setLocation(geoPointFromLocation(currentLocation));
+
+        ParseACL acl = new ParseACL();
+        acl.setPublicReadAccess(true);
+        newIvoPost.setACL(acl);
+
+        newIvoPost.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+               ivoPostText.getText().clear();
+                doListQuery();
+            }
+        });
     }
 }
