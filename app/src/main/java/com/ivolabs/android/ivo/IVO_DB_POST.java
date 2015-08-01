@@ -48,6 +48,13 @@ public class IVO_DB_POST extends ParseObject {
         put("geoLocation", value);
     }
 
+    public void setVoteCount(int value) {
+        put("votes", value);
+    }
+
+    public int getVoteCount() {
+        return getInt("votes");
+    }
     public static ParseQuery<IVO_DB_POST> getQuery() {
         return ParseQuery.getQuery(IVO_DB_POST.class);
     }

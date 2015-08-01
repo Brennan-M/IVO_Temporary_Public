@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
@@ -14,17 +14,17 @@
     <ListView
     android:id="@+id/ivo_feed_list"
     android:layout_width="fill_parent"
-    android:layout_height="380dp"
+    android:layout_height="390dp"
         android:layout_weight="0.48" />
 
     <EditText
-        android:layout_width="350dp"
+        android:layout_width="400dp"
         android:layout_height="50dp"
+        android:maxLength="350"
         android:id="@+id/postTextEntry"
         android:hint="@string/ivoPostHint"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="111dp" />
+        android:layout_above="@+id/submit_ivopost_button"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/submit_ivopost_button"
@@ -33,10 +33,9 @@
         android:text="Submit"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="119dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
 
-</LinearLayout>
+</RelativeLayout>

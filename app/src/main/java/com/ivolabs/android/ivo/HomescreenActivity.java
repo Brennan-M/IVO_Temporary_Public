@@ -72,6 +72,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                 .addOnConnectionFailedListener(this)
                 .build();
 
+        /* This portion of our code sets up the ability to post to our database */
         final Button postButton = (Button) findViewById(R.id.submit_ivopost_button);
         ivoPostText = (EditText) findViewById(R.id.postTextEntry);
 
@@ -87,7 +88,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
             }
         });
 
-
+        /* This is the ParseQueryAdapter which prepares us to retrieve results from our database */
         ParseQueryAdapter.QueryFactory<IVO_DB_POST> factory =
                 new ParseQueryAdapter.QueryFactory<IVO_DB_POST>() {
                     public ParseQuery<IVO_DB_POST> create() {
@@ -106,22 +107,42 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
         IvoFeedQueryAdapter = new ParseQueryAdapter<IVO_DB_POST>(this, factory) {
             @Override
-            public View getItemView(IVO_DB_POST post, View view, ViewGroup parent) {
+            public View getItemView(final IVO_DB_POST post, View view, ViewGroup parent) {
                 if (view == null) {
                     view = View.inflate(getContext(), R.layout.ivo_post_item, null);
                 }
                 TextView contentView = (TextView) view.findViewById(R.id.content_view);
                 TextView usernameView = (TextView) view.findViewById(R.id.username_view);
+                Button upvote = (Button) view.findViewById(R.id.like_button);
+
+
+                upvote.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+
+                        Log.d("IVOTAG", post.getObjectId().toString());
+                        post.setVoteCount(post.getVoteCount() + 1);
+
+                        post.saveInBackground(new SaveCallback() {
+                            public void done(ParseException e) {
+                                if (e == null) {
+                                    // Change Icon color and notify that user can only like one time!
+                                    Log.d("IVOTAG", "Success");
+                                } else {
+                                    Log.d("IVOTAG", "Failure: " + e);
+                                }
+                            }
+                        });
+                    }
+                });
+
                 contentView.setText(post.getTextEntry());
                 usernameView.setText(post.getUser().getUsername());
                 return view;
             }
         };
 
-        // Disable automatic loading when the adapter is attached to a view.
-        IvoFeedQueryAdapter.setAutoload(false);
 
-        // Disable pagination, we'll manage the query limit ourselves
+        IvoFeedQueryAdapter.setAutoload(false);
         IvoFeedQueryAdapter.setPaginationEnabled(false);
 
         // Attach the query adapter to the view
@@ -314,11 +335,16 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
     private void post () {
 
+        if (ivoPostText.getText().toString().trim().length() <= 0) {
+            return;
+        }
+
         IVO_DB_POST newIvoPost = new IVO_DB_POST();
         newIvoPost.setUser(ParseUser.getCurrentUser());
         String text = ivoPostText.getText().toString().trim();
         newIvoPost.setTextEntry(text);
         newIvoPost.setUserName(ParseUser.getCurrentUser().getUsername());
+        newIvoPost.setVoteCount(0);
 
         Intent intent = this.getIntent();
 
@@ -326,6 +352,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
         ParseACL acl = new ParseACL();
         acl.setPublicReadAccess(true);
+        acl.setPublicWriteAccess(true);
         newIvoPost.setACL(acl);
 
         newIvoPost.saveInBackground(new SaveCallback() {
