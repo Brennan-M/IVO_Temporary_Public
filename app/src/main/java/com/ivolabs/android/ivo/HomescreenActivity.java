@@ -25,13 +25,18 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.parse.FindCallback;
 import com.parse.ParseACL;
 import com.parse.ParseException;
 import com.parse.ParseGeoPoint;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
+import com.parse.ParseRelation;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+
+import java.util.List;
 
 
 public class HomescreenActivity extends ActionBarActivity implements LocationListener,
@@ -54,6 +59,8 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
     private ParseQueryAdapter<IVO_DB_POST> IvoFeedQueryAdapter;
 
+    final ParseUser user = ParseUser.getCurrentUser();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +79,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                 .addOnConnectionFailedListener(this)
                 .build();
 
+        /* This portion of our code sets up the ability to post to our database */
         final Button postButton = (Button) findViewById(R.id.submit_ivopost_button);
         ivoPostText = (EditText) findViewById(R.id.postTextEntry);
 
@@ -87,7 +95,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
             }
         });
 
-
+        /* This is the ParseQueryAdapter which prepares us to retrieve results from our database */
         ParseQueryAdapter.QueryFactory<IVO_DB_POST> factory =
                 new ParseQueryAdapter.QueryFactory<IVO_DB_POST>() {
                     public ParseQuery<IVO_DB_POST> create() {
@@ -104,24 +112,73 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                     }
                 };
 
+
         IvoFeedQueryAdapter = new ParseQueryAdapter<IVO_DB_POST>(this, factory) {
             @Override
-            public View getItemView(IVO_DB_POST post, View view, ViewGroup parent) {
+            public View getItemView(final IVO_DB_POST post, View view, ViewGroup parent) {
                 if (view == null) {
                     view = View.inflate(getContext(), R.layout.ivo_post_item, null);
                 }
+
+
                 TextView contentView = (TextView) view.findViewById(R.id.content_view);
                 TextView usernameView = (TextView) view.findViewById(R.id.username_view);
+                Button upvote = (Button) view.findViewById(R.id.like_button);
+
+
+                ParseRelation relation = user.getRelation("LikedIvoPosts");
+                ParseQuery query = relation.getQuery();
+                query.findInBackground(new FindCallback<ParseObject>() {
+                    public void done(List<ParseObject> list, ParseException e) {
+                        for (ParseObject element : list) {
+                            if (element.getObjectId().equals(post.getObjectId())) {
+                                // WE HAVE ALREADY SEEN THIS POST OBJECT AND LIKED IT
+                                // Display object green with + whatever
+                                return;
+                            }
+                        }
+                        //POST IS A NEW OBJECT
+                        // Setup onclick and display it as gray with + wahtever text
+                    }
+                });
+
+
+                upvote.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+
+                        // Increment liked counter
+                        post.setVoteCount(post.getVoteCount() + 1);
+
+                        // Add post to users' liked posts
+                        ParseRelation postsLiked = user.getRelation("LikedIvoPosts");
+                        postsLiked.add(post);
+
+                        // Add user to posts' liked by users
+                        ParseRelation likedByUsers = post.getRelation("LikedByIvoUsers");
+                        likedByUsers.add(user);
+
+
+                        post.saveInBackground(new SaveCallback() {
+                            public void done(ParseException e) {
+                                if (e == null) {
+                                    user.saveInBackground();
+                                    // Display '+11' for number of times liked and turn icon green
+                                } else {
+                                    Log.d("IVOTAG", "Failure: " + e);
+                                }
+                            }
+                        });
+                    }
+                });
+
                 contentView.setText(post.getTextEntry());
                 usernameView.setText(post.getUser().getUsername());
                 return view;
             }
         };
 
-        // Disable automatic loading when the adapter is attached to a view.
-        IvoFeedQueryAdapter.setAutoload(false);
 
-        // Disable pagination, we'll manage the query limit ourselves
+        IvoFeedQueryAdapter.setAutoload(false);
         IvoFeedQueryAdapter.setPaginationEnabled(false);
 
         // Attach the query adapter to the view
@@ -314,11 +371,16 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
     private void post () {
 
+        if (ivoPostText.getText().toString().trim().length() <= 0) {
+            return;
+        }
+
         IVO_DB_POST newIvoPost = new IVO_DB_POST();
         newIvoPost.setUser(ParseUser.getCurrentUser());
         String text = ivoPostText.getText().toString().trim();
         newIvoPost.setTextEntry(text);
         newIvoPost.setUserName(ParseUser.getCurrentUser().getUsername());
+        newIvoPost.setVoteCount(0);
 
         Intent intent = this.getIntent();
 
@@ -326,6 +388,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
         ParseACL acl = new ParseACL();
         acl.setPublicReadAccess(true);
+        acl.setPublicWriteAccess(true);
         newIvoPost.setACL(acl);
 
         newIvoPost.saveInBackground(new SaveCallback() {
