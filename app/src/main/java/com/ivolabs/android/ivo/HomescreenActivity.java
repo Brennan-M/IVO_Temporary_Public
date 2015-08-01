@@ -125,7 +125,6 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                 TextView usernameView = (TextView) view.findViewById(R.id.username_view);
                 Button upvote = (Button) view.findViewById(R.id.like_button);
 
-
                 ParseRelation relation = user.getRelation("LikedIvoPosts");
                 ParseQuery query = relation.getQuery();
                 query.findInBackground(new FindCallback<ParseObject>() {
