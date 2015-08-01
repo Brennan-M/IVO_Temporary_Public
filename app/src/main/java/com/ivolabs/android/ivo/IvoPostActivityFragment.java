@@ -45,9 +45,6 @@ public class IvoPostActivityFragment extends Fragment {
             }
         });
 
-
-
-
         return view;
     }
 
