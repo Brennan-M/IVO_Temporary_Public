@@ -16,9 +16,11 @@
         android:layout_height="34dp"
         android:id="@+id/like_button"
         android:layout_gravity="right"
-        android:layout_alignBottom="@+id/username_view"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/username_view"
+        android:layout_toRightOf="@+id/content_view"
+        android:layout_toEndOf="@+id/content_view" />
 
     <TextView
         android:id="@+id/username_view"

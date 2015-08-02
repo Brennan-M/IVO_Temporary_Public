@@ -123,7 +123,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
                 TextView contentView = (TextView) view.findViewById(R.id.content_view);
                 TextView usernameView = (TextView) view.findViewById(R.id.username_view);
-                Button upvote = (Button) view.findViewById(R.id.like_button);
+                final Button upvote = (Button) view.findViewById(R.id.like_button);
 
                 ParseRelation relation = user.getRelation("LikedIvoPosts");
                 ParseQuery query = relation.getQuery();
@@ -131,44 +131,51 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                     public void done(List<ParseObject> list, ParseException e) {
                         for (ParseObject element : list) {
                             if (element.getObjectId().equals(post.getObjectId())) {
-                                // WE HAVE ALREADY SEEN THIS POST OBJECT AND LIKED IT
-                                // Display object green with + whatever
+
+                                //upvote.setBackgroundTintList(Color.GREEN);
+                                upvote.setText(String.valueOf(post.getVoteCount()));
+                                // Display like count
                                 return;
                             }
                         }
-                        //POST IS A NEW OBJECT
-                        // Setup onclick and display it as gray with + wahtever text
-                    }
-                });
+
+                        //upvote.setBackgroundColor(Color.GRAY);
+                        upvote.setText(String.valueOf(post.getVoteCount()));
+
+                        upvote.setOnClickListener(new View.OnClickListener() {
+                            public void onClick(View v) {
+
+                                // Increment liked counter
+                                post.setVoteCount(post.getVoteCount() + 1);
+
+                                // Add post to users' liked posts
+                                ParseRelation postsLiked = user.getRelation("LikedIvoPosts");
+                                postsLiked.add(post);
+
+                                // Add user to posts' liked by users
+                                ParseRelation likedByUsers = post.getRelation("LikedByIvoUsers");
+                                likedByUsers.add(user);
 
 
-                upvote.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-
-                        // Increment liked counter
-                        post.setVoteCount(post.getVoteCount() + 1);
-
-                        // Add post to users' liked posts
-                        ParseRelation postsLiked = user.getRelation("LikedIvoPosts");
-                        postsLiked.add(post);
-
-                        // Add user to posts' liked by users
-                        ParseRelation likedByUsers = post.getRelation("LikedByIvoUsers");
-                        likedByUsers.add(user);
-
-
-                        post.saveInBackground(new SaveCallback() {
-                            public void done(ParseException e) {
-                                if (e == null) {
-                                    user.saveInBackground();
-                                    // Display '+11' for number of times liked and turn icon green
-                                } else {
-                                    Log.d("IVOTAG", "Failure: " + e);
-                                }
+                                post.saveInBackground(new SaveCallback() {
+                                    public void done(ParseException e) {
+                                        if (e == null) {
+                                            user.saveInBackground();
+                                            upvote.setOnClickListener(null);
+                                            upvote.setText(String.valueOf(post.getVoteCount()));
+                                            //upvote.setBackgroundColor(Color.GREEN);
+                                        } else {
+                                            Log.d("IVOTAG", "Failure: " + e);
+                                        }
+                                    }
+                                });
                             }
                         });
                     }
                 });
+
+
+
 
                 contentView.setText(post.getTextEntry());
                 usernameView.setText(post.getUser().getUsername());
