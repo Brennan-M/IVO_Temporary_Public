@@ -2,8 +2,10 @@ package com.ivolabs.android.ivo;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -14,6 +16,7 @@ import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +24,6 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -57,7 +59,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
     private EditText ivoPostText;
 
-    private static final float DISTANCE_TO_SEARCH_IN_FEET = 250.0f;
+    private static float DISTANCE_TO_SEARCH_IN_FEET;
     private static final float METERS_PER_FEET = 0.3048f;
     private static final int METERS_PER_KILOMETER = 1000;
 
@@ -65,7 +67,6 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
     final ParseUser user = ParseUser.getCurrentUser();
 
-    String category;
     Spinner spinner;
 
     @Override
@@ -85,6 +86,8 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .build();
+
+        final SharedPreferences prefs = getApplicationContext().getSharedPreferences("Ivo", Context.MODE_PRIVATE);
 
         spinner = (Spinner) findViewById(R.id.category_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.categories_array, android.R.layout.simple_spinner_item);
@@ -119,6 +122,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                         ParseQuery<IVO_DB_POST> query = IVO_DB_POST.getQuery();
                         query.include("user");
                         query.orderByDescending("votes");
+                        DISTANCE_TO_SEARCH_IN_FEET = prefs.getFloat("range", 250.0f);
                         query.whereWithinKilometers("geoLocation", geoPointFromLocation(currentLocation), DISTANCE_TO_SEARCH_IN_FEET * METERS_PER_FEET/METERS_PER_KILOMETER);
                         query.whereEqualTo("category", spinner.getSelectedItem().toString()); //toString or not?
                         return query;
