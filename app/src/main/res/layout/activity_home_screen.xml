@@ -13,7 +13,7 @@
 
     <ListView
         android:id="@+id/ivo_feed_list"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="390dp"
         android:layout_weight="0.48"
         android:layout_above="@+id/postTextEntry" />
@@ -21,7 +21,7 @@
     <EditText
         android:layout_width="400dp"
         android:layout_height="50dp"
-        android:maxLength="350"
+        android:maxLength="210"
         android:id="@+id/postTextEntry"
         android:hint="@string/ivoPostHint"
         android:layout_above="@+id/submit_ivopost_button"
