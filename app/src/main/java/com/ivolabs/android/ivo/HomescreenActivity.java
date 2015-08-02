@@ -105,7 +105,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
                         ParseQuery<IVO_DB_POST> query = IVO_DB_POST.getQuery();
                         query.include("user");
-                        query.orderByDescending("createdAt");
+                        query.orderByDescending("votes");
                         query.whereWithinKilometers("geoLocation", geoPointFromLocation(currentLocation), DISTANCE_TO_SEARCH_IN_FEET * METERS_PER_FEET/METERS_PER_KILOMETER);
                         query.setLimit(20);
                         return query;

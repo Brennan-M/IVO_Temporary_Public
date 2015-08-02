@@ -7,24 +7,25 @@
 
     <TextView
         android:id="@+id/content_view"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_width="275dp"
+        android:layout_height="25dp"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
-        android:layout_width="37dp"
-        android:layout_height="34dp"
+        android:layout_width="35dp"
+        android:layout_height="55dp"
         android:id="@+id/like_button"
         android:layout_gravity="right"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/username_view"
+        android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/content_view"
-        android:layout_toEndOf="@+id/content_view" />
+        android:layout_alignBottom="@+id/username_view"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:text=" " />
 
     <TextView
         android:id="@+id/username_view"
-        android:layout_width="300dp"
+        android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_below="@+id/content_view"
