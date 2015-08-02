@@ -13,11 +13,15 @@ import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -61,6 +65,9 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
     final ParseUser user = ParseUser.getCurrentUser();
 
+    String category;
+    Spinner spinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +85,12 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .build();
+
+        spinner = (Spinner) findViewById(R.id.category_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.categories_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new CategoryOnItemSelectedListener());
 
         /* This portion of our code sets up the ability to post to our database */
         final Button postButton = (Button) findViewById(R.id.submit_ivopost_button);
@@ -107,7 +120,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                         query.include("user");
                         query.orderByDescending("votes");
                         query.whereWithinKilometers("geoLocation", geoPointFromLocation(currentLocation), DISTANCE_TO_SEARCH_IN_FEET * METERS_PER_FEET/METERS_PER_KILOMETER);
-                        query.setLimit(20);
+                        query.whereEqualTo("category", spinner.getSelectedItem().toString()); //toString or not?
                         return query;
                     }
                 };
@@ -387,6 +400,8 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
         newIvoPost.setTextEntry(text);
         newIvoPost.setUserName(ParseUser.getCurrentUser().getUsername());
         newIvoPost.setVoteCount(0);
+        newIvoPost.setCategory(spinner.getSelectedItem().toString());
+        Log.d("IVOTAG", spinner.getSelectedItem().toString());
 
         Intent intent = this.getIntent();
 
@@ -404,5 +419,16 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                 doListQuery();
             }
         });
+    }
+
+    public class CategoryOnItemSelectedListener implements OnItemSelectedListener {
+
+        public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+            doListQuery();
+        }
+
+        public void onNothingSelected(AdapterView parent) {
+            // Do nothing.
+        }
     }
 }

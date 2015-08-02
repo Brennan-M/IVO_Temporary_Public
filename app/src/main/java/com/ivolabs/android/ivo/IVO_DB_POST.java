@@ -55,6 +55,14 @@ public class IVO_DB_POST extends ParseObject {
     public int getVoteCount() {
         return getInt("votes");
     }
+
+    public void setCategory(String value) {
+        put("category", value);
+    }
+
+    public String getCategory() {
+        return getString("category");
+    }
     public static ParseQuery<IVO_DB_POST> getQuery() {
         return ParseQuery.getQuery(IVO_DB_POST.class);
     }

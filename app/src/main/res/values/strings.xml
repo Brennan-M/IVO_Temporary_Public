@@ -16,4 +16,10 @@
     <string name="login">Log In</string>
     <string name="ivoPostHint">Your Post Here...</string>
     <string name="title_activity_front_screen">FrontScreenActivity</string>
+    <string-array name="categories_array">
+        <item>General</item>
+        <item>Humor</item>
+        <item>Fun Facts</item>
+        <item>Advice</item>
+    </string-array>
 </resources>
