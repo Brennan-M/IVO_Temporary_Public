@@ -12,10 +12,11 @@
     android:weightSum="1">
 
     <ListView
-    android:id="@+id/ivo_feed_list"
-    android:layout_width="fill_parent"
-    android:layout_height="390dp"
-        android:layout_weight="0.48" />
+        android:id="@+id/ivo_feed_list"
+        android:layout_width="fill_parent"
+        android:layout_height="390dp"
+        android:layout_weight="0.48"
+        android:layout_above="@+id/postTextEntry" />
 
     <EditText
         android:layout_width="400dp"
@@ -34,8 +35,10 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_gravity="bottom"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/postTextEntry"
+        android:layout_alignStart="@+id/postTextEntry"
+        android:layout_alignRight="@+id/postTextEntry"
+        android:layout_alignEnd="@+id/postTextEntry" />
 
 
-</RelativeLayout>
+</RelativeLayout>q
