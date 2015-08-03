@@ -2,12 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ivolabs.android.ivo" >
 
-    <permission
-        android:name="com.parse.anywall.permission.MAPS_RECEIVE"
-        android:protectionLevel="signature" >
-    </permission>
-
-    <uses-permission android:name="com.parse.anywall.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

@@ -37,9 +37,9 @@ public class SettingsActivityFragment extends Fragment {
         float curProgress = prefs.getFloat("range", 250.0f);
         if (curProgress == 250.0f) {
             rangeBar.setProgress(0);
-        } else if (curProgress == 3250.0f) {
+        } else if (curProgress == 1250.0f) {
             rangeBar.setProgress(1);
-        } else if (curProgress == 56250.0f) {
+        } else if (curProgress == 6250.0f) {
             rangeBar.setProgress(2);
         }
 
