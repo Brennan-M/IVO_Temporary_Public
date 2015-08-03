@@ -90,7 +90,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
         final SharedPreferences prefs = getApplicationContext().getSharedPreferences("Ivo", Context.MODE_PRIVATE);
 
         spinner = (Spinner) findViewById(R.id.category_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.categories_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.categories_array, R.layout.alttextview);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new CategoryOnItemSelectedListener());
@@ -149,14 +149,14 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                         for (ParseObject element : list) {
                             if (element.getObjectId().equals(post.getObjectId())) {
 
-                                //upvote.setBackgroundTintList(Color.GREEN);
+//                                upvote.setBackgroundColor(0x8deeee);
                                 upvote.setText(String.valueOf(post.getVoteCount()));
                                 // Display like count
                                 return;
                             }
                         }
 
-                        //upvote.setBackgroundColor(Color.GRAY);
+//                        upvote.setBackgroundColor(0xc0d9d9);
                         upvote.setText(String.valueOf(post.getVoteCount()));
 
                         upvote.setOnClickListener(new View.OnClickListener() {
@@ -180,6 +180,8 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                                             user.saveInBackground();
                                             upvote.setOnClickListener(null);
                                             upvote.setText(String.valueOf(post.getVoteCount()));
+                                            upvote.setBackgroundColor(0xc0d9d9);
+
                                             //upvote.setBackgroundColor(Color.GREEN);
                                         } else {
                                             Log.d("IVOTAG", "Failure: " + e);
