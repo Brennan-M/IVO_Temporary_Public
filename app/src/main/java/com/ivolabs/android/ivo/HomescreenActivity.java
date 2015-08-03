@@ -145,14 +145,14 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                         for (ParseObject element : list) {
                             if (element.getObjectId().equals(post.getObjectId())) {
 
-                                //upvote.setBackgroundTintList(Color.GREEN);
+//                                upvote.setBackgroundColor(0x8deeee);
                                 upvote.setText(String.valueOf(post.getVoteCount()));
                                 // Display like count
                                 return;
                             }
                         }
 
-                        //upvote.setBackgroundColor(Color.GRAY);
+//                        upvote.setBackgroundColor(0xc0d9d9);
                         upvote.setText(String.valueOf(post.getVoteCount()));
 
                         upvote.setOnClickListener(new View.OnClickListener() {
@@ -176,6 +176,8 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                                             user.saveInBackground();
                                             upvote.setOnClickListener(null);
                                             upvote.setText(String.valueOf(post.getVoteCount()));
+                                            upvote.setBackgroundColor(0xc0d9d9);
+
                                             //upvote.setBackgroundColor(Color.GREEN);
                                         } else {
                                             Log.d("IVOTAG", "Failure: " + e);
