@@ -9,6 +9,8 @@
         android:id="@+id/content_view"
         android:layout_width="275dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/txWhite"
+        android:fontFamily="sans-serif-thin"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
@@ -29,6 +31,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_below="@+id/content_view"
+        android:textColor="@color/txWhite"
+        android:fontFamily="sans-serif-thin"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
