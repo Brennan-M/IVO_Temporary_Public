@@ -2,6 +2,7 @@
     <string name="app_name">IVO</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="action_myivo">myIVO</string>
     <string name="title_activity_login_screen">LoginScreen</string>
     <string name="title_activity_ivopost_screen">IVOPostScreen</string>
     <string name="title_activity_login">LoginActivity</string>
@@ -9,6 +10,7 @@
     <string name="title_activity_ivo_post">IvoPostActivity</string>
     <string name="title_activity_ivo_feed">IvoFeedActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_myivo">MyIvoActivity</string>
     <string name="new_username_hint">Enter Username</string>
     <string name="new_password_hint">Enter Password</string>
     <string name="new_password_hint_2">Enter Password Again</string>
