@@ -5,7 +5,6 @@
     android:layout_width="fill_parent"
     android:singleLine="true"
     android:gravity="center"
-    android:textColor="@color/txWhite"
     android:fontFamily="sans-serif-thin"
     android:textSize="20dp"
     android:layout_height="fill_parent"/>
