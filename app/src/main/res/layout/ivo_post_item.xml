@@ -19,10 +19,9 @@
         android:layout_gravity="right"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/content_view"
-        android:layout_alignBottom="@+id/username_view"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="false"
-        android:text=" " />
+        android:text="^" />
 
     <TextView
         android:id="@+id/username_view"
