@@ -39,6 +39,10 @@
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
+            android:name=".MyIvoActivity"
+            android:label="@string/title_activity_myivo" >
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:label="Ivo" >
             <intent-filter>

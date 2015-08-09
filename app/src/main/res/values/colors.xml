@@ -2,4 +2,5 @@
 <resources>
     <color name="bgBlue">#0572e0</color>
     <color name="txWhite">#ffffff</color>
+    <color name="btBlue">#3ecde4</color>
 </resources>

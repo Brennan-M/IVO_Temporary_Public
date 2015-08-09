@@ -9,7 +9,6 @@
         android:id="@+id/content_view"
         android:layout_width="275dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/txWhite"
         android:fontFamily="sans-serif-thin"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -20,10 +19,9 @@
         android:layout_gravity="right"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/content_view"
-        android:layout_alignBottom="@+id/username_view"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="false"
-        android:text=" " />
+        android:text="^" />
 
     <TextView
         android:id="@+id/username_view"
@@ -31,7 +29,6 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_below="@+id/content_view"
-        android:textColor="@color/txWhite"
         android:fontFamily="sans-serif-thin"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

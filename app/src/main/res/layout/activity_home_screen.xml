@@ -8,7 +8,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/bgBlue"
     tools:context=".MainActivity"
     android:weightSum="1">
 
@@ -26,7 +25,6 @@
         android:maxLength="210"
         android:id="@+id/postTextEntry"
         android:hint="@string/ivoPostHint"
-        android:textColor="@color/txWhite"
         android:layout_above="@+id/submit_ivopost_button"
         android:layout_centerHorizontal="true" />
 
@@ -39,6 +37,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_gravity="bottom"
         android:textSize="20dp"
+        android:background="@color/btBlue"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/postTextEntry"
         android:layout_alignStart="@+id/postTextEntry"
@@ -46,28 +45,34 @@
         android:layout_alignEnd="@+id/postTextEntry"
         android:fontFamily="sans-serif-thin"/>
 
-    <Spinner
-        android:layout_width="175dp"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/category_spinner"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/ivo_feed_list"
-
-        android:layout_alignEnd="@+id/ivo_feed_list" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Category: "
-        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:background="@color/btBlue"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="29dp"
-        android:textColor="@color/txWhite"
-        android:fontFamily="sans-serif-thin"
-        android:layout_marginStart="29dp" />
+        android:layout_alignRight="@+id/ivo_feed_list"
+        android:layout_alignEnd="@+id/ivo_feed_list"
+        android:orientation="horizontal" >
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Category: "
+            android:id="@+id/textView2"
+            android:layout_marginLeft="29dp"
+            android:fontFamily="sans-serif-thin"
+            android:layout_marginStart="29dp" />
+
+        <Spinner
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_spinner"
+        android:layout_alignParentTop="true"   />
+
+</LinearLayout>
 
 </RelativeLayout>
