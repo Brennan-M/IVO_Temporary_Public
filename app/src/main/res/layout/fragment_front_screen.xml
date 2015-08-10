@@ -1,6 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:background="@color/bgBlue"
+    android:background="@color/txWhite"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -16,7 +16,7 @@
         android:layout_marginTop="60dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/txWhite"
+        android:textColor="@color/bgBlue"
         android:textSize="120dp"
         android:fontFamily="sans-serif-thin"
     />
@@ -46,6 +46,9 @@
             android:layout_below="@+id/start_signup"
             android:fontFamily="sans-serif-thin"
             android:layout_weight="4"
+            android:textColor="@color/txWhite"
+            android:background="@color/bgBlue"
+            android:textSize="25sp"
             android:layout_centerHorizontal="true" />
 
         <Space
@@ -77,6 +80,9 @@
             android:layout_marginTop="89dp"
             android:layout_alignLeft="@+id/start_login"
             android:fontFamily="sans-serif-thin"
+            android:textColor="@color/txWhite"
+            android:background="@color/bgBlue"
+            android:textSize="25sp"
             android:layout_weight="4"
             android:layout_alignStart="@+id/start_login" />
 

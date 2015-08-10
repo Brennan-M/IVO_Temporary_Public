@@ -45,6 +45,7 @@
         android:background="@color/bgBlue"
         android:textColor="@color/txWhite"
         android:text="@string/login"
+        android:textSize="25sp"
         android:layout_marginTop="81dp"
         android:layout_below="@+id/password_for_login"
         android:fontFamily="sans-serif-thin"

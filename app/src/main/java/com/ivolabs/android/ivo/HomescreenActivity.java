@@ -91,7 +91,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
         spinner = (Spinner) findViewById(R.id.category_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.categories_array, R.layout.alttextview);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.altspinnerdropdown);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new CategoryOnItemSelectedListener());
 

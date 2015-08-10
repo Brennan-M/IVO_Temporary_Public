@@ -9,6 +9,7 @@
         android:id="@+id/content_view"
         android:layout_width="275dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:fontFamily="sans-serif-thin"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 

@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="325dp"
         android:layout_weight="0.48"
-        android:layout_above="@+id/postTextEntry" />
+        android:layout_below="@+id/LinearLayoutHomeTop" />
 
     <EditText
         android:layout_width="400dp"
@@ -35,7 +35,7 @@
         android:text="Submit"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_gravity="bottom"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:background="@color/bgBlue"
         android:textColor="@color/txWhite"
         android:layout_alignParentBottom="true"
@@ -47,6 +47,7 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
+        android:id="@+id/LinearLayoutHomeTop"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
         android:background="@color/bgBlue"
@@ -63,6 +64,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Category: "
             android:textColor="@color/txWhite"
+            android:textSize="20sp"
             android:id="@+id/textView2"
             android:layout_marginLeft="29dp"
             android:fontFamily="sans-serif-thin"

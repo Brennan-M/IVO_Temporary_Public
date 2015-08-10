@@ -54,6 +54,7 @@
         android:id="@+id/register_new_user"
         android:layout_width="wrap_content"
         android:fontFamily="sans-serif-thin"
+        android:textSize="25sp"
         android:background="@color/bgBlue"
         android:textColor="@color/txWhite"
         android:layout_height="wrap_content"
