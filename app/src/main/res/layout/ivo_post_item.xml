@@ -9,19 +9,37 @@
         android:id="@+id/content_view"
         android:layout_width="275dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-thin"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <Button
-        android:layout_width="35dp"
-        android:layout_height="55dp"
-        android:id="@+id/like_button"
-        android:layout_gravity="right"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/content_view"
-        android:layout_alignBottom="@+id/username_view"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="false"
-        android:text=" " />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:id="@+id/LinearLayoutPost"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true">
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@color/txWhite"
+            android:id="@+id/like_button"
+            android:src="@mipmap/ic_launcher2"/>
+
+
+        <TextView
+            android:id="@+id/counter_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:fontFamily="sans-serif-thin" />
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/username_view"
@@ -29,6 +47,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_below="@+id/content_view"
+        android:fontFamily="sans-serif-thin"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

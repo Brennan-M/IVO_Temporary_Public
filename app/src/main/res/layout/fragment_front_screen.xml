@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:background="@color/txWhite"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -11,29 +12,90 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="IVO"
-        android:id="@+id/textView"
-        android:layout_marginTop="60dp"
+        android:id="@+id/textViewFront"
+        android:layout_marginTop="10dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/bgBlue"
+        android:textSize="120dp"
+        android:fontFamily="sans-serif-thin"
+    />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:id="@+id/start_signup"
-        android:layout_marginTop="89dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignLeft="@+id/start_login"
-        android:layout_alignStart="@+id/start_login" />
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:id="@+id/LinearLayoutFrontTop"
+        android:layout_gravity="center_vertical"
         android:layout_height="wrap_content"
-        android:text="Log In"
-        android:id="@+id/start_login"
-        android:layout_marginTop="28dp"
-        android:layout_below="@+id/start_signup"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textViewFront"
+        android:orientation="horizontal" >
+
+
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log In"
+            android:id="@+id/start_login"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/start_signup"
+            android:fontFamily="sans-serif-thin"
+            android:layout_weight="4"
+            android:textColor="@color/txWhite"
+            android:background="@color/bgBlue"
+            android:textSize="25sp"
+            android:layout_centerHorizontal="true" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LinearLayoutFrontTop"
+        android:orientation="horizontal" >
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="2"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:id="@+id/start_signup"
+            android:layout_marginTop="10dp"
+            android:layout_alignLeft="@+id/start_login"
+            android:fontFamily="sans-serif-thin"
+            android:textColor="@color/txWhite"
+            android:background="@color/bgBlue"
+            android:textSize="25sp"
+            android:layout_weight="4"
+            android:layout_alignStart="@+id/start_login" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="2"
+            android:layout_centerHorizontal="true" />
+
+
+    </LinearLayout>
+
 
 
 </RelativeLayout>
