@@ -3,6 +3,7 @@
     android:id="@+id/camera_preview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_above="@+id/submit_ivopost_button"
     android:orientation="vertical" >
 
     <SurfaceView
@@ -14,8 +15,12 @@
 
     <ImageButton
         android:id="@+id/save_ivoPhoto_button"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@color/bgBlue"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher4"
         android:layout_weight="1"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
