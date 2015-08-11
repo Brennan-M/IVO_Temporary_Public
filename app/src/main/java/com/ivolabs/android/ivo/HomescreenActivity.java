@@ -115,6 +115,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
             @Override
             public void onClick(View v) {
                 screenCount = 1;
+                postButton.setVisibility(View.INVISIBLE);
                 takePhoto();
             }
         });
@@ -508,6 +509,8 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
             startActivity(startMain);
         } else if (screenCount == 1) {
             screenCount = 0;
+            Button postButton = (Button) findViewById(R.id.submit_ivopost_button);
+            postButton.setVisibility(View.VISIBLE);
             FragmentManager fm = HomescreenActivity.this.getFragmentManager();
             fm.popBackStack("HomescreenActivity", FragmentManager.POP_BACK_STACK_INCLUSIVE);
         }

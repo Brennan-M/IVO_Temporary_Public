@@ -13,6 +13,7 @@ import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import android.graphics.Matrix;
@@ -144,6 +145,8 @@ public class CameraFragment extends Fragment {
 
     private void attachIvoPhoto(ParseFile ivoPhoto) {
         ((HomescreenActivity) getActivity()).photoFile = ivoPhoto;
+        Button postButton = (Button) getActivity().findViewById(R.id.submit_ivopost_button);
+        postButton.setVisibility(View.VISIBLE);
         FragmentManager fm = getActivity().getFragmentManager();
         fm.popBackStack("HomescreenActivity", FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
