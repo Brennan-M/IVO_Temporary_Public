@@ -2,6 +2,8 @@ package com.ivolabs.android.ivo;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
@@ -26,7 +28,6 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.app.Fragment;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -59,6 +60,8 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
     private LocationRequest locationRequest;
     // This variable holds our current instance of the location client
     private GoogleApiClient locationClient;
+
+    private int screenCount = 0;
 
     private Location lastLocation;
     private Location currentLocation;
@@ -111,6 +114,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
             @Override
             public void onClick(View v) {
+                screenCount = 1;
                 takePhoto();
             }
         });
@@ -499,6 +503,19 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
         public void onNothingSelected(AdapterView parent) {
             // Do nothing.
+        }
+    }
+
+    public void onBackPressed() {
+        if (screenCount == 0) {
+            Intent startMain = new Intent(Intent.ACTION_MAIN);
+            startMain.addCategory(Intent.CATEGORY_HOME);
+            startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(startMain);
+        } else if (screenCount == 1) {
+            screenCount = 0;
+            FragmentManager fm = HomescreenActivity.this.getFragmentManager();
+            fm.popBackStack("HomescreenActivity", FragmentManager.POP_BACK_STACK_INCLUSIVE);
         }
     }
 }
