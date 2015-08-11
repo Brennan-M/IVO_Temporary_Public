@@ -5,6 +5,7 @@ package com.ivolabs.android.ivo;
  */
 
 import com.parse.ParseClassName;
+import com.parse.ParseFile;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -58,6 +59,14 @@ public class IVO_DB_POST extends ParseObject {
 
     public void setCategory(String value) {
         put("category", value);
+    }
+
+    public ParseFile getPictureEntry() {
+        return getParseFile("pictureEntry");
+    }
+
+    public void setPictureEntry(ParseFile file) {
+        put("pictureEntry", file);
     }
 
     public String getCategory() {

@@ -25,4 +25,5 @@
         <item>Advice</item>
         <item>Work</item>
     </string-array>
+    <string name="title_activity_camera">Camera</string>
 </resources>

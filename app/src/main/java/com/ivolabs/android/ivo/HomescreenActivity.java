@@ -2,6 +2,7 @@ package com.ivolabs.android.ivo;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -25,6 +26,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.Fragment;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -33,9 +35,12 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.parse.FindCallback;
+import com.parse.GetDataCallback;
 import com.parse.ParseACL;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseGeoPoint;
+import com.parse.ParseImageView;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
@@ -59,6 +64,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
     private Location currentLocation;
 
     private EditText ivoPostText;
+    public ParseFile photoFile;
 
     private static float DISTANCE_TO_SEARCH_IN_FEET;
     private static final float METERS_PER_FEET = 0.3048f;
@@ -98,6 +104,17 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
         /* This portion of our code sets up the ability to post to our database */
         final Button postButton = (Button) findViewById(R.id.submit_ivopost_button);
+
+        final ImageButton photoButton = (ImageButton) findViewById(R.id.imageButton);
+
+        photoButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                takePhoto();
+            }
+        });
+
         ivoPostText = (EditText) findViewById(R.id.postTextEntry);
 
         postButton.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +160,8 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                 TextView usernameView = (TextView) view.findViewById(R.id.username_view);
                 final ImageButton chevron = (ImageButton) view.findViewById(R.id.like_button);
                 final TextView upvote = (TextView) view.findViewById(R.id.counter_view);
+
+                ParseImageView ivoImage = (ParseImageView) view.findViewById(R.id.ivoPhoto);
 
                 ParseRelation relation = user.getRelation("LikedIvoPosts");
                 ParseQuery query = relation.getQuery();
@@ -198,7 +217,18 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                 });
 
 
-
+                ParseFile image = post.getPictureEntry();
+                if (image != null) {
+                    ivoImage.setParseFile(image);
+                    ivoImage.loadInBackground(new GetDataCallback() {
+                        @Override
+                        public void done(byte[] data, ParseException e) {
+                            // nothing to do
+                        }
+                    });
+                } else {
+                    ivoImage.setParseFile(null);
+                }
 
                 contentView.setText(post.getTextEntry());
                 usernameView.setText(post.getUser().getUsername());
@@ -210,10 +240,19 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
         IvoFeedQueryAdapter.setAutoload(false);
         IvoFeedQueryAdapter.setPaginationEnabled(false);
 
+
         // Attach the query adapter to the view
         ListView postsListView = (ListView) findViewById(R.id.ivo_feed_list);
         postsListView.setAdapter(IvoFeedQueryAdapter);
 
+    }
+
+    public void takePhoto() {
+        Fragment cameraFragment = new com.ivolabs.android.ivo.CameraFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.LinearLayout1, cameraFragment);
+        transaction.addToBackStack("HomescreenActivity");
+        transaction.commit();
     }
 
     @Override
@@ -425,6 +464,14 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
         newIvoPost.setVoteCount(0);
         newIvoPost.setCategory(spinner.getSelectedItem().toString());
         Log.d("IVOTAG", spinner.getSelectedItem().toString());
+
+        if (photoFile != null) {
+            newIvoPost.setPictureEntry(photoFile);
+            Log.d("IVOTAG", "Picture added successfully");
+            photoFile = null;
+        } else {
+            Log.d("IVOTAG", "Picture not added! =(");
+        }
 
         Intent intent = this.getIntent();
 

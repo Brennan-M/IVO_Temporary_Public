@@ -2,200 +2,200 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-e0a1156b7a3bb471188e663c10f5e987aa66ae68.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-6a1103a0bfc44cd75604bbe4106df34f8c232d91.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-311b1711a613018a029e80628a70f95d813de507.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-3207dcdbbd2ff53b457a47ec63e438c139c513f9.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\Parse-1.9.4\Parse-1.9.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="56c22930b5d4f77015b6a40c7f14103d3e101001">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\Parse-1.9.4-b3616c03dda668086d38d0eca1814bda640289e8.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-d0419db1aac6f9ca685e9886293fd5e4321291c7.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-9781e5738053b636be409fd523eb5c16a787e4e5.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-2324c0f148fde772951e12a22533eed305ae8e31.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-e2fc51c9190322f943f9480bc661564aa96fb74d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-886e0720e62667a6163ad7e74d7af114160081a9.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-a70f0aaf380cec37f0c8cf7618fbb5536fb25519.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-250b17f361c5542564e2157a2ac7b8cccd05e0fb.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-9928bcfe9020e5bf856898d5d7ef43fc53c53a5e.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-af75daffa688831360fc47137f7b5faea3837067.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-176b260f786a097a61b088197de2ebdf531e0ce5.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-ba840a295747df86e965bda96333c9a3532b0a67.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-8a8664bc3771ca1d81c9df968fde22ee3c464eeb.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d405025c600055237c171a0bbabaa49d69696573">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-e77d70584ba3c8f508763dddf74e3b16bc01c0f9.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-49a458e5703b1e918732bcd42d2d5c7e0c46e580.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-5674aad422588d9d217e378cc47683008a6d8038.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a78183f30e769a98ab4820794f597763088d3065">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-402809763ce587bfeda606af0aa105ec132c7323.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-bf2e89174f3cdb60596d562cc51cf457fe557c6d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\jars\libs\internal_impl-22.0.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-db06cfd3aa30fcf967e3ed54538762715d8bbd85.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.2.0\6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd\bolts-android-1.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\bolts-android-1.2.0-3cdb95aea1980967deca5416bb2502d25662b061.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.5.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-56a0019f91d0f8935befe6606bf4731a4ff93642.jar" />
-    </item>
-    <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-261fb6656f860807579bdaafd89e6006514a8524.jar" />
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-8303ea057107af89bff9b5bcd350c91c6e8b9f9f.jar" />
     </item>
     <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.5.0\jars\classes.jar"
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-a747d14d26991dbe5892e9768444a7d316dc85b8.jar" />
+        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-16955e2206c4ab1e104624a95d3d0b8f2acf5954.jar" />
     </item>
     <item
-        jar="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.5.0\jars\classes.jar"
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-ced7b57e1b1c3c1f69f4316449d8bda7b3608503.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-dea0a79e987d65624462ae95e6197930670a0ba1.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-802e3dba6cde2c1a43a3c7070aa877222c8ba7f6.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-0a761b80567dce2b62bbb094158a2789b8c96dc1.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-7a3aeb45a79f3defd0d03419064b55d34d5330a2.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-c70c1153a4f89833d81e2ea25c6b1e06e0147c31.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-ebc0dd4c27a0012492886e0d9ff89df9fa59fd75.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-567be943005e8cb0cfa6dd4dbd8a5af924a2d067.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/Parse-1.9.4/Parse-1.9.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="56c22930b5d4f77015b6a40c7f14103d3e101001">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/Parse-1.9.4-dd7289bf345fdcaaf40de556a5da1cfae5a0fe8c.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-230a31918d789ef4931dcfcd05ad15ad86003310.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-894f879340eed8913c299d0d5389ddbcb4a4e7db.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-4129007a2d5c3fadf6103c1e375b4579c6b831af.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-2b33fe1c3ecbaf4ce319eb2b56bee2e4c96b46cb.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-5bb10c6aeddb79f4a1b4286c828b6fa1982684f1.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-6840d02136a8c835d387088bd7d47d83bb2194c3.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.2.0/6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd/bolts-android-1.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/bolts-android-1.2.0-85bc5eed381ec6146b01851073d9b6b081329f80.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-7ddccd7782e4da9a9b73b8c55194b031ce499caf.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-e5bb2f2f5f12a6001181da9e5de587fd852ed87d.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.5.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
-        <dex dex="C:\Users\Dhruv\Documents\GitHub\IvoLabs\app\build\intermediates\pre-dexed\debug\classes-e92fd44bf73538f261221edaf41e52c9568654bf.jar" />
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-48771d3ce5a56f9de1fec03d5f5acdc341ed24e2.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-d4314855b79cb6ed0ea77968ca539755b93fbf45.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-c8b19b3b5ebac46535bbce30bf137f549c2933d0.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-d3a8eba21afad6b68efe488c556b9a41115ebe61.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-bdcb5284dd6ecdd6c22ccac18d76bdee2a5c6594.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-8acdf6bd9fb083ff3538ed6a182310b7c006793a.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.0.0/jars/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-b0aae5a9baf7875c23053354ff894c1c26b6e25f.jar" />
+    </item>
+    <item
+        jar="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.5.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d405025c600055237c171a0bbabaa49d69696573">
+        <dex dex="/Users/Brennan/Desktop/IVO_2.0/IVO/app/build/intermediates/pre-dexed/debug/classes-cd82b6dc143f14099a3edafa5fb68a74c9d0fcae.jar" />
     </item>
 
 </items>
