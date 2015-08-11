@@ -219,6 +219,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
                 ParseFile image = post.getPictureEntry();
                 if (image != null) {
+                    ivoImage.setVisibility(View.VISIBLE);
                     ivoImage.setParseFile(image);
                     ivoImage.loadInBackground(new GetDataCallback() {
                         @Override
@@ -227,6 +228,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                         }
                     });
                 } else {
+                    ivoImage.setVisibility(View.GONE);
                     ivoImage.setParseFile(null);
                 }
 

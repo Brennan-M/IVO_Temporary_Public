@@ -68,7 +68,6 @@ public class CameraFragment extends Fragment {
 
                     @Override
                     public void onPictureTaken(byte[] data, Camera camera) {
-                        Toast.makeText(CameraFragment.this.getActivity(), "Hello world", Toast.LENGTH_LONG).show();
                         savePhotoForEntry(data);
                     }
 

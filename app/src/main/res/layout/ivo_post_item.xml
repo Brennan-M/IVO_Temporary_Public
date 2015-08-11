@@ -4,19 +4,46 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:id="@+id/LinearLayoutContent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true">
 
     <TextView
         android:id="@+id/content_view"
-        android:layout_width="275dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:fontFamily="sans-serif-thin"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    <com.parse.ParseImageView
+        android:id="@+id/ivoPhoto"
+        android:layout_marginTop="10dp"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/username_view" />
+
+    <TextView
+        android:id="@+id/username_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/content_view"
+        android:fontFamily="sans-serif-thin" />
+    </LinearLayout>
+
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         android:id="@+id/LinearLayoutPost"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="vertical"
         android:layout_marginRight="20dp"
         android:layout_alignParentRight="true">
@@ -41,21 +68,5 @@
     </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/username_view"
-        android:layout_width="275dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_below="@+id/content_view"
-        android:fontFamily="sans-serif-thin"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <com.parse.ParseImageView
-        android:id="@+id/ivoPhoto"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/like_button" />
 
 </RelativeLayout>
