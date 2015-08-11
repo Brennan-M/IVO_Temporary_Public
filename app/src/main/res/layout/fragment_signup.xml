@@ -64,6 +64,6 @@
         android:text="@string/register"
         android:layout_below="@+id/new_password_confirmation"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp" />
+        android:layout_marginTop="20dp" />
 
 </RelativeLayout>
