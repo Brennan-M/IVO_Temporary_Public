@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.graphics.Matrix;
 
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -109,18 +109,19 @@ public class CameraFragment extends Fragment {
     private void savePhotoForEntry(byte[] data) {
 
         // Resize photo from camera byte array
-        Bitmap ivoImage = BitmapFactory.decodeByteArray(data, 0, data.length);
-        Bitmap IvoImageScaled = Bitmap.createScaledBitmap(ivoImage, 200, 200 * ivoImage.getHeight() / ivoImage.getWidth(), false);
+        Bitmap IvoImage = BitmapFactory.decodeByteArray(data, 0, data.length);
+
 
         // Override Android default landscape orientation and save portrait
         Matrix matrix = new Matrix();
         matrix.postRotate(90);
-        Bitmap rotatedScaledIvoImage = Bitmap.createBitmap(IvoImageScaled, 0,
-                0, IvoImageScaled.getWidth(), IvoImageScaled.getHeight(),
+        Bitmap rotatedScaledIvoImage = Bitmap.createBitmap(IvoImage, 0,
+                0, IvoImage.getWidth(), IvoImage.getHeight(),
                 matrix, true);
 
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         rotatedScaledIvoImage.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+
 
         byte[] scaledData = bos.toByteArray();
 
