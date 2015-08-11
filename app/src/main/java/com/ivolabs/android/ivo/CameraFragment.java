@@ -2,8 +2,10 @@ package com.ivolabs.android.ivo;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,7 +18,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
-import android.graphics.Matrix;
 
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -109,6 +110,9 @@ public class CameraFragment extends Fragment {
 
     private void savePhotoForEntry(byte[] data) {
 
+        final ProgressDialog dialog = new ProgressDialog(CameraFragment.this.getActivity());
+        dialog.setMessage("Saving Picture...");
+        dialog.show();
         // Resize photo from camera byte array
         Bitmap IvoImage = BitmapFactory.decodeByteArray(data, 0, data.length);
 
@@ -137,6 +141,7 @@ public class CameraFragment extends Fragment {
                             Toast.LENGTH_LONG).show();
                 } else {
                     Log.d("IVOTAG", "attached picture");
+                    dialog.dismiss();
                     attachIvoPhoto(pictureEntry);
                 }
             }
