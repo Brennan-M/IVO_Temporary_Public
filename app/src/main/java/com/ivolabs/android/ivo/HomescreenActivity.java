@@ -20,6 +20,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -140,7 +141,8 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
 
                 TextView contentView = (TextView) view.findViewById(R.id.content_view);
                 TextView usernameView = (TextView) view.findViewById(R.id.username_view);
-                final Button upvote = (Button) view.findViewById(R.id.like_button);
+                final ImageButton chevron = (ImageButton) view.findViewById(R.id.like_button);
+                final TextView upvote = (TextView) view.findViewById(R.id.counter_view);
 
                 ParseRelation relation = user.getRelation("LikedIvoPosts");
                 ParseQuery query = relation.getQuery();
@@ -148,6 +150,7 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                     public void done(List<ParseObject> list, ParseException e) {
                         for (ParseObject element : list) {
                             if (element.getObjectId().equals(post.getObjectId())) {
+                                chevron.setImageResource(R.mipmap.ic_launcher);
 
 //                                upvote.setBackgroundColor(0x8deeee);
                                 upvote.setText(String.valueOf(post.getVoteCount()));
@@ -155,11 +158,12 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                                 return;
                             }
                         }
+                        chevron.setImageResource(R.mipmap.ic_launcher2);
 
 //                        upvote.setBackgroundColor(0xc0d9d9);
                         upvote.setText(String.valueOf(post.getVoteCount()));
 
-                        upvote.setOnClickListener(new View.OnClickListener() {
+                        chevron.setOnClickListener(new View.OnClickListener() {
                             public void onClick(View v) {
 
                                 // Increment liked counter
@@ -178,9 +182,9 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
                                     public void done(ParseException e) {
                                         if (e == null) {
                                             user.saveInBackground();
-                                            upvote.setOnClickListener(null);
+                                            chevron.setImageResource(R.mipmap.ic_launcher);
+                                            chevron.setOnClickListener(null);
                                             upvote.setText(String.valueOf(post.getVoteCount()));
-                                            upvote.setBackgroundColor(0xc0d9d9);
 
                                             //upvote.setBackgroundColor(Color.GREEN);
                                         } else {
