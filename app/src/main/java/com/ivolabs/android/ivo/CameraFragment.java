@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
-import android.graphics.Matrix;
 
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -170,5 +170,4 @@ public class CameraFragment extends Fragment {
         }
         super.onPause();
     }
-
 }
