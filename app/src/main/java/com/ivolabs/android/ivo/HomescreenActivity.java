@@ -266,14 +266,6 @@ public class HomescreenActivity extends ActionBarActivity implements LocationLis
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_home_screen, menu);
 
-        menu.findItem(R.id.action_myivo).setOnMenuItemClickListener(new OnMenuItemClickListener() {
-            public boolean onMenuItemClick(MenuItem item) {
-                startActivity(new Intent(HomescreenActivity.this, MyIvoActivity.class));
-
-                return true;
-            }
-        });
-
         menu.findItem(R.id.action_settings).setOnMenuItemClickListener(new OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
                 startActivity(new Intent(HomescreenActivity.this, SettingsActivity.class));

@@ -95,7 +95,7 @@
             android:layout_marginStart="29dp" />
 
         <Spinner
-        android:layout_width="175dp"
+        android:layout_width="190dp"
             android:textColor="#FFF"
         android:layout_height="wrap_content"
         android:id="@+id/category_spinner"
