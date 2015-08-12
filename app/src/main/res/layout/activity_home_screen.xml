@@ -38,6 +38,8 @@
         android:maxLength="210"
         android:layout_weight="10"
         android:id="@+id/postTextEntry"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
         android:hint="@string/ivoPostHint"
         android:layout_above="@+id/submit_ivopost_button"
         android:layout_centerHorizontal="true" />
