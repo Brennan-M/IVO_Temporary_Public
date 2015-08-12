@@ -9,6 +9,7 @@
         android:id="@+id/LinearLayoutContent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_toLeftOf="@+id/LinearLayoutPost"
         android:layout_marginLeft="20dp"
         android:layout_alignParentLeft="true">
 
