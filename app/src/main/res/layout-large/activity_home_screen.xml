@@ -51,7 +51,6 @@
         android:layout_width="match_parent"
         android:id="@+id/LinearLayoutHomeTop"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
         android:background="@color/bgBlue"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
