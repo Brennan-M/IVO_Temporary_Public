@@ -13,6 +13,7 @@ import com.parse.ParseUser;
 
 /**
  * Data model for a post to our IVO Database.
+ *
  */
 @ParseClassName("IVO_DB")
 public class IVO_DB_POST extends ParseObject {
